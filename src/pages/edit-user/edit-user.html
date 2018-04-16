@@ -1,0 +1,307 @@
+<ion-header>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <ion-navbar color="primary">
+    <ion-row>
+      <div class="col-sm-1 col-md-1">
+        <div style="margin-left:20px">
+          <img src="../../assets/imgs/TalkOn_logo.png" display="block" height="35" width="45" />
+        </div>
+      </div>
+      <div class="col-sm-2 col-md-2">
+        <ion-title>TalkOn</ion-title>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <ion-icon name="md-person-add"></ion-icon> Edit Users
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <ion-buttons end>
+          <button ion-button icon-only block>
+            <ion-icon name="contact"></ion-icon>Admin
+          </button>
+        </ion-buttons>
+      </div>
+    </ion-row>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="container" padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-sm-3 col-md-3>
+        <!--Side Bar -->
+        <div class="nav-side-menu">
+          <div class="menu-list">
+
+            <li data-toggle="collapse" data-target="#menu1" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-1
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu1">
+              <li>
+                <a tabindex="-1" href="#" (click)="openHomePage()">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu2" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-2
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu2">
+              <li>
+                <a tabindex="-1" href="#" (click)="openHomePage()">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu3" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-3
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu3">
+              <li>
+                <a tabindex="-1" href="#" (click)="openHomePage()">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu4" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-4
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu4">
+              <li>
+                <a tabindex="-1" href="#" (click)="openHomePage()">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu5" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-5
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu5">
+              <li>
+                <a tabindex="-1" href="#" (click)="openHomePage()">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="">Child-5</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-sm-9 col-md-9>
+        <!-- template reference variable -->
+        <form (ngSubmit)="userSubmit()" #addform="ngForm">
+          <ion-row>
+            <ion-col col-sm-4 col-md-4 style="margin-top:-15px;">Note: Some fields are mandatory.</ion-col>
+          </ion-row>
+          <ion-row>
+            <div class="form-group col-sm-4 col-md-4">
+              <input type="text" [(ngModel)]="model.role" name="role" class="form-control" placeholder="Role" id="role">
+            </div>
+
+            <div class="form-group col-sm-4 col-md-4 col-lg-4">
+              <input type="text" [(ngModel)]="model.fname" name="fname" class="form-control" placeholder="First Name" id="fname" required
+                #fname="ngModel" pattern="[a-zA-Z][a-zA-Z ]+">
+              <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger">
+                <div [hidden]="!fname.hasError('required')">First Name Required</div>
+                <div [hidden]="!fname.hasError('pattern')">Only alphabets allowed</div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-md-4 col-lg-4">
+              <input type="text" [(ngModel)]="model.vname" name="vname" class="form-control" placeholder="Virtual First Name" id="vname"
+                required #vname="ngModel" pattern="[a-zA-Z][a-zA-Z ]+">
+              <div *ngIf="vname.invalid && (vname.dirty || vname.touched)" class="alert alert-danger">
+                <div [hidden]="!vname.hasError('required')">Virtual Name Required</div>
+                <div [hidden]="!vname.hasError('pattern')">Only alphabets allowed</div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-md-4 col-lg-4">
+              <input type="email" [(ngModel)]="model.useremail" name="useremail" class="form-control" placeholder="Email" id="useremail"
+                #useremail="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+              <div *ngIf="useremail.invalid && (useremail.dirty || useremail.touched)" class="alert alert-danger">
+                <div [hidden]="!useremail.hasError('required')">Email is required</div>
+                <div [hidden]="!useremail.hasError('pattern')">Email format be like
+                  <small>
+                    <b>joe@gmail.com</b>
+                  </small>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-md-4 col-lg-4">
+              <select class="form-control" name="gender" (change)="onGenderdrop()" [(ngModel)]="selectedGender">
+                <option *ngFor="let gen of genderType" [value]="gen.name">{{gen.name}}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-sm-4 col-md-4">
+              <select class="form-control" name="emaillimit" (change)="onSelectEmail()" [(ngModel)]="selectedEmailLimit">
+                <option *ngFor="let emailLim of selectEmailLimit" [value]="emailLim.no">{{emailLim.no}}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-12">
+              <div class="col-sm-2 col-md-2">Chat Limit</div>
+              <div class="col-sm-8 col-md-8">
+                <ion-row>
+                  <div *ngFor="let chat of radioChatLimit ; let idx = index">
+                    <ion-col>{{chat.id}}</ion-col>
+                    <ion-col>
+                      <input type="radio" name="chatlimit" [value]="chat.no" [checked]="idx === 0" 
+                      (change)="onSelectionChange(chat.no)">
+                    </ion-col>
+
+                  </div>
+                </ion-row>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-4 col-md-4">
+              <div>Multi Session Allowed</div>
+              <div>
+                <input type="checkbox" [(ngModel)]="model.multisession" name="multisession" class="form-control" 
+                id="multisession" #multisession="ngModel" (change)="onCheckboxChange(model.multisession)">
+              </div>
+            </div>
+
+            <div *ngIf="showRingVolume" class="form-group col-sm-4 col-md-4">
+              <select class="form-control" name="ringtype" (change)="onSelectRing()" [(ngModel)]="selectedRing">
+                <option *ngFor="let ringtype of selectRingType" [value]="ringtype.no">{{ringtype.no}}</option>
+              </select>
+            </div>
+
+            <div *ngIf="showRingVolume" class="form-group col-sm-4 col-md-4">
+              <select class="form-control" (change)="onSelectVolume()" [(ngModel)]="selectedVolume" name="volume">
+                <option *ngFor="let volume of selectVolume" [value]="volume.no">{{volume.no}}</option>
+              </select>
+            </div>
+
+            <div class="form-group col-sm-6 col-md-6 col-lg-6">
+              <ion-grid>
+                <ion-row>
+                  <div class="col-sm-4 col-md-4 col-lg-4">Rating</div>
+                  <fieldset class="rating col-sm-8 col-md-8 col-lg-8">
+                    <input type="radio" value="10" [checked]="rating===10" />
+                    <label title="10 - Excellent" (click)='onratingClick(10)'>10 stars</label>
+
+                    <input type="radio" value="9" [checked]="rating===9" />
+                    <label title="9 - Pretty good" (click)='onratingClick(9)'>9 stars</label>
+
+                    <input type="radio" value="8" [checked]="rating===8" />
+                    <label title="8 - Good" (click)='onratingClick(8)'>8 stars</label>
+
+                    <input type="radio" value="7" [checked]="rating===7" />
+                    <label title="7 - Ok" (click)='onratingClick(7)'>7 stars</label>
+
+                    <input type="radio" value="6" [checked]="rating===6" />
+                    <label title="6 - Ok" (click)='onratingClick(6)'>6 star</label>
+
+                    <input type="radio" value="5" [checked]="rating===5" />
+                    <label title="5 - Satisfactory" (click)='onratingClick(5)'>5 stars</label>
+
+                    <input type="radio" value="4" [checked]="rating===4" />
+                    <label title="4 - Satisfactory" (click)='onratingClick(4)'>4 stars</label>
+
+                    <input type="radio" value="3" [checked]="rating===3" />
+                    <label title="3 - Unsatisfactory" (click)='onratingClick(3)'>3 stars</label>
+
+                    <input type="radio" value="2" [checked]="rating===2" />
+                    <label title="2 - Poor" (click)='onratingClick(2)'>2 stars</label>
+
+                    <input type="radio" value="1" [checked]="rating===1" />
+                    <label title="1 - Very poor" (click)='onratingClick(1)'>1 star</label>
+                  </fieldset>
+                </ion-row>
+              </ion-grid>
+            </div>
+            <div *ngIf="showMessage" class="form-group col-sm-6 col-md-6">
+              <textarea [(ngModel)]="model.message" name="message" rows="2" cols="50" 
+              placeholder="Message" class="form-control" id="message">
+              </textarea>
+            </div>
+          </ion-row>
+            <!-- {{diagnostic}} -->
+          <ion-row>
+            <div class="col-sm-4 col-md-4">
+              <button type="submit" [disabled]="!addform.form.valid" ion-button color="primary" round>Save</button>
+              <button type="reset" ion-button color="primary" round>Reset</button>
+            </div>
+          </ion-row>
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer class="footer"> All right reserved</ion-footer>

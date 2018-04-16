@@ -1,14 +1,247 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <ion-navbar color="primary">
+    <ion-row>
+      <div class="col-sm-1 col-md-1">
+        <div style="margin-left:20px">
+          <img src="../../assets/imgs/TalkOn_logo.png" display="block" height="35" width="45" />
+        </div>
+      </div>
+      <div class="col-sm-2 col-md-2">
+        <ion-title>TalkOn</ion-title>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <ion-icon name="ios-home"></ion-icon> Users
+      </div>
+      <div class="col-sm-3 col-md-3">
+        <ion-buttons end>
+          <button ion-button icon-only block>
+            <ion-icon name="contact"></ion-icon>Admin
+          </button>
+        </ion-buttons>
+      </div>
+    </ion-row>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="container" padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-sm-3 col-md-3>
+        <!--Side Bar -->
+        <div class="nav-side-menu">
+          <div class="menu-list">
+
+            <li data-toggle="collapse" data-target="#menu1" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-1
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu1">
+              <li>
+                <a tabindex="-1" href="">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu2" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-2
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu2">
+              <li>
+                <a tabindex="-1" href="">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu3" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-3
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu3">
+              <li>
+                <a tabindex="-1" href="">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu4" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-4
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu4">
+              <li>
+                <a tabindex="-1" href="">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-5</a>
+              </li>
+            </ul>
+
+            <li data-toggle="collapse" data-target="#menu5" class="collapsed active">
+              <a href="#">
+                <i class=""></i> Parent-5
+                <span class="caret"></span>
+              </a>
+            </li>
+            <ul class="sub-menu collapse" id="menu5">
+              <li>
+                <a tabindex="-1" href="">Child-1</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-2</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-3</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-4</a>
+              </li>
+              <li>
+                <a tabindex="-1" href="#" (click)="openEditPage()">Child-5</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-sm-9 col-md-9>
+        <ion-row>
+          <div class="col-sm-4 col-md-4">
+            <a href="#" (click)=openEditPage(1)>Add User</a>
+          </div>
+          <div class="form-group col-sm-8 col-md-8">
+            <label>Search </label>
+            <input type="text" id="inputName" [(ngModel)]="inputName" />
+            <input type="button" (click)="FilterByName()" value="Go!" />
+          </div>
+        </ion-row>
+
+        <div class="panel panel-default myContent">
+          <!-- Default panel contents -->
+          <div>
+            <table class="table table-bordered">
+              <thead>
+                <th>No.</th>
+                <th>Enable</th>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Permission</th>
+                <th>Skills</th>
+                <th>Chat Limit</th>
+                <th>Email Limit</th>
+                <th>IP</th>
+                <th>Online</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of users">
+                  <td>{{user.id}}</td>
+                  <div *ngIf="user.enable=='yes'">
+                    <td>
+                      <span class="glyphicon glyphicon-ok"></span>
+                    </td>
+                  </div>
+                  <div *ngIf="user.enable=='no'">
+                    <td>
+                      <span class="glyphicon glyphicon-remove"></span>
+                    </td>
+                  </div>
+                  <td>{{user.vname}}</td>
+                  <td>{{user.fname}}</td>
+                  <td>{{user.lname}}</td>
+                  <td>{{user.permission}}</td>
+                  <td>{{user.skills}}</td>
+                  <td>{{user.chatlimit}}</td>
+                  <td>{{user.emaillimit}}</td>
+                  <td>{{user.IP}}</td>
+                  <div *ngIf="user.online=='yes'">
+                    <td>
+                      <span class="greenDot"></span>
+                    </td>
+                  </div>
+                  <div *ngIf="user.online=='no'">
+                    <td>
+                      <span class="dot"></span>
+                    </td>
+                  </div>
+                </tr>
+              </tbody>
+            </table>
+            <div class="btn-toolbar" role="toolbar" style="margin: 0;">
+              <div class="btn-group">
+                <label style="margin-top:10px">Page {{currentIndex}}/{{pageNumber}}</label>
+              </div>
+              <div class="btn-group pull-right">
+                <ul class="pagination">
+                  <li [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}">
+                    <a (click)="prevPage()" href="#">Prev</a>
+                  </li>
+                  <li *ngFor="let page of pagesIndex" [ngClass]="{'active': (currentIndex == page)}">
+                    <a (click)="setPage(page)" href="#">{{page}}</a>
+                  </li>
+                  <li [ngClass]="{'disabled': (currentIndex == pageNumber || pageNumber == 0)}">
+                    <a (click)="nextPage()" href="#">Next</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer class="footer">All right reserved</ion-footer>

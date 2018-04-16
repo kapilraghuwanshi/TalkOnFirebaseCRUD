@@ -1,1 +1,25 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu persistent=[true] [content]="content">
+	<ion-header>
+		<ion-toolbar color="primary">
+			<ion-title>TalkOn</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-content style="background-color: #E3E3E5; ">
+		<ion-list >
+		  <button style="background-color: #E3E3E5;color:#5A53B6; font-size: 18px;" 
+				menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+			 &nbsp;
+			<ion-icon name="ios-flame-outline" big> </ion-icon>
+			&nbsp; &nbsp; &nbsp;
+			{{p.title}}
+		  </button>          
+		</ion-list>
+
+	  </ion-content>
+
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

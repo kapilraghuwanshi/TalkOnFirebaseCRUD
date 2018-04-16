@@ -1,22 +1,34 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+// Angular
+import { Component, ViewChild } from '@angular/core';
+// Ionic
+import { Nav, Platform, MenuController, AlertController, NavController } from 'ionic-angular';
+// Ionic Native
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { EditUserPage } from '../pages/edit-user/edit-user';
+import { editUser } from '../modals/User';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
+  rootPage: any = HomePage;
+
+  pages: Array<{ title: string, component: any }>;
+
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    console.log("MyApp constructor method called ");
+    this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
-  }
-}
 
+  }
+
+}
