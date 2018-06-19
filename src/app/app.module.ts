@@ -13,13 +13,14 @@ import { HomePage } from '../pages/home/home';
 import { EditUserPage } from '../pages/edit-user/edit-user';
 import { FirebaseServiceProvider } from '../providers/firebase-service/firebase-service';
 
+//Copy from Firebase console
 export const firebaseConfig = {
-  apiKey: "AIzaSyAB6eyI8D0DwDzRQI6vdbl7WIDvbh4zFnI",
-  authDomain: "talkon-d8721.firebaseapp.com",
-  databaseURL: "https://talkon-d8721.firebaseio.com",
-  projectId: "talkon-d8721",
+  apiKey: "your_apiKey",
+  authDomain: "your_authDomain",
+  databaseURL: "your_databaseURL",
+  projectId: "your_projectId",
   storageBucket: "",
-  messagingSenderId: "980666939950"
+  messagingSenderId: "your_messagingSenderId"
 }; 
 
 
