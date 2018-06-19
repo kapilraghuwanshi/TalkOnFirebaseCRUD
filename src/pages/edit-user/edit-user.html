@@ -218,8 +218,8 @@
                   <div *ngFor="let chat of radioChatLimit ; let idx = index">
                     <ion-col>{{chat.id}}</ion-col>
                     <ion-col>
-                      <input type="radio" name="chatlimit" [value]="chat.no" [checked]="idx === 0" 
-                      (change)="onSelectionChange(chat.no)">
+                      <input type="radio" name="chatlimit" [value]="chat.no" 
+                      [checked]="idx === 0" (change)="onSelectionChange(chat.no)">
                     </ion-col>
 
                   </div>
@@ -230,8 +230,8 @@
             <div class="form-group col-sm-4 col-md-4">
               <div>Multi Session Allowed</div>
               <div>
-                <input type="checkbox" [(ngModel)]="model.multisession" name="multisession" class="form-control" 
-                id="multisession" #multisession="ngModel" (change)="onCheckboxChange(model.multisession)">
+                <input type="checkbox" [(ngModel)]="model.multisession" name="multisession" class="form-control" id="multisession" #multisession="ngModel"
+                  (change)="onCheckboxChange(model.multisession)">
               </div>
             </div>
 
@@ -286,12 +286,11 @@
               </ion-grid>
             </div>
             <div *ngIf="showMessage" class="form-group col-sm-6 col-md-6">
-              <textarea [(ngModel)]="model.message" name="message" rows="2" cols="50" 
-              placeholder="Message" class="form-control" id="message">
+              <textarea [(ngModel)]="model.message" name="message" rows="2" cols="50" placeholder="Message" class="form-control" id="message">
               </textarea>
             </div>
           </ion-row>
-            <!-- {{diagnostic}} -->
+          <!-- {{diagnostic}} -->
           <ion-row>
             <div class="col-sm-4 col-md-4">
               <button type="submit" [disabled]="!addform.form.valid" ion-button color="primary" round>Save</button>
@@ -300,6 +299,7 @@
           </ion-row>
 
         </form>
+        <div [hidden]="!addform.form.valid"> {{submitMessage}} </div>
       </ion-col>
     </ion-row>
   </ion-grid>
