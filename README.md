@@ -1,0 +1,1 @@
+A simple app to demonstrate Ionic configuration with Google Firebase and includes Search and Table Pagination along with Template driven form Angular5.
